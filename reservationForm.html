@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!--JavaScript Bootstrap-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+      integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+
+    <!-- Navbar End -->
+
+    <!-- Form Start -->
+    <title>Hotel Reservation Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+        });
+        calendar.render();
+      });
+    </script>
+    <h1>Formulário de Reserva</h1>
+    <div id="calendar"></div>
+    <form>
+      <label for="check-in-date">Data de check-in:</label>
+      <input
+        type="date"
+        id="check-in-date"
+        name="check-in-date"
+        required
+      /><br />
+
+      <label for="check-out-date">Data do check-out:</label>
+      <input
+        type="date"
+        id="check-out-date"
+        name="check-out-date"
+        required
+      /><br />
+
+      <label for="num-adults">Quantidade de Adultos:</label>
+      <input
+        type="number"
+        id="num-adults"
+        name="num-adults"
+        min="1"
+        max="4"
+        required
+      /><br />
+
+      <label for="num-children">Quantidade de Crianças:</label>
+      <input
+        type="number"
+        id="num-children"
+        name="num-children"
+        min="0"
+        max="2"
+        required
+      /><br />
+
+      <label for="room-type">Tipo de Quarto:</label>
+      <select id="room-type" name="room-type" required>
+        <option value="">Selecione o tipo de quarto</option>
+        <option value="single">Single</option>
+        <option value="double">Double</option></select
+      ><br />
+
+      <label for="special-requests">Requisições Especiais:</label>
+      <textarea
+        id="special-requests"
+        name="special-requests"
+        rows="4"
+      ></textarea
+      ><br />
+
+      <button type="submit">Reserve</button>
+    </form>
+    <div class="wrapper">
+      <a href="#payment-modal">Abrir modal</a>
+    </div>
+    <!-- Form End -->
+
+    <!-- Modal Start -->
+    <div id="payment-modal" class="modal">
+      <div class="modal__content">
+        <h1>Modal com HTML e CSS</h1>
+
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+
+        <div class="modal__footer">
+          <a href="#" class="modal__footer-btn-close"> Fechar </a>
+        </div>
+
+        <a href="#" class="modal__close">&times;</a>
+      </div>
+    </div>
+    <!-- Modal End -->
+  </body>
+</html>

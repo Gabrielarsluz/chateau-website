@@ -1,0 +1,351 @@
+/********** Template CSS **********/
+:root {
+  --primary: #e88f2a;
+  --secondary: #faf3eb;
+  --light: #ffffff;
+  --dark: #2b2825;
+}
+
+.font-secondary {
+  font-family: 'Pacifico', cursive;
+}
+
+h1,
+h2,
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+h3,
+h4,
+.font-weight-semi-bold {
+  font-weight: 600 !important;
+}
+
+h5,
+h6,
+.font-weight-medium {
+  font-weight: 500 !important;
+}
+
+.btn {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.btn-primary {
+  color: #ffffff;
+}
+
+.border-inner {
+  position: relative;
+}
+
+.border-inner * {
+  position: relative;
+  z-index: 1;
+}
+
+.border-inner::before {
+  position: absolute;
+  content: '';
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  background: none;
+  border: 1px solid var(--light);
+  z-index: 0;
+}
+
+.btn-square {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-sm-square {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-lg-square {
+  width: 50px;
+  height: 50px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 0;
+  border-radius: 0;
+  z-index: 99;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: 'Oswald', sans-serif;
+  padding: 30px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light);
+  outline: none;
+  transition: 0.5s;
+}
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+  padding: 20px 15px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-dark .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+}
+
+.hero-header {
+  background: url(../img/hero.jpg) top right no-repeat;
+  background-size: cover;
+}
+
+.btn-play {
+  position: relative;
+  display: block;
+  box-sizing: content-box;
+  width: 16px;
+  height: 26px;
+  border-radius: 100%;
+  border: none;
+  outline: none !important;
+  padding: 18px 20px 20px 28px;
+  background: #ffffff;
+}
+
+.btn-play:before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  transition: all 200ms;
+}
+
+.btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  left: -1px;
+  border-left: 16px solid var(--primary);
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+    opacity: 0;
+  }
+}
+
+.section-title::before {
+  position: absolute;
+  content: '';
+  width: 60px;
+  height: 10px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -30px;
+  background: var(--primary);
+}
+
+.section-title::after {
+  position: absolute;
+  content: '';
+  width: 180px;
+  height: 2px;
+  left: 50%;
+  bottom: 4px;
+  margin-left: -90px;
+  background: var(--primary);
+}
+
+.service::after,
+.contact::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: calc(100% - 45px);
+  top: 135px;
+  left: 0;
+  background: linear-gradient(rgba(43, 40, 37, 0.9), rgba(43, 40, 37, 0.9)),
+    url(../img/service.jpg) center center no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.contact::after {
+  background: linear-gradient(rgba(43, 40, 37, 0.5), rgba(43, 40, 37, 0.5)),
+    url(../img/bg.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.bg-offer {
+  background: linear-gradient(rgba(43, 40, 37, 0.9), rgba(43, 40, 37, 0.9)),
+    url(../img/offer.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.team-item img {
+  transition: 0.5s;
+}
+
+.team-item:hover img {
+  transform: scale(1.1);
+  filter: blur(5px);
+}
+
+.team-item .team-overlay {
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.team-item:hover .team-overlay {
+  opacity: 1;
+}
+
+.bg-img {
+  background: linear-gradient(rgba(43, 40, 37, 0.5), rgba(43, 40, 37, 0.5)),
+    url(../img/bg.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: bold;
+  display: flex;
+}
+
+input[type='date'],
+input[type='number'],
+input[type='text'],
+input[type='email'],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, 0.7);
+  transition: all 0.4s;
+}
+
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+.content {
+  border-radius: 4px;
+  position: relative;
+  width: 500px;
+  max-width: 90%;
+  background: #fff;
+  padding: 1em 2em;
+}
+
+.footer {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #585858;
+  text-decoration: none;
+}
+
+.footer-btn-close {
+  width: 150px;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #cfcca8;
+  color: #000000;
+  border-radius: 3px;
+}
